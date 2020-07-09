@@ -1,0 +1,24 @@
+ <nav>
+            <div class="nav-wrapper" >
+                <a href="{% url 'main:homepage' %}" class="brand-logo">On My Mind</a>
+                 <a href="#" class="sidenav-trigger" data-target="mobile-links"><li class="material-icons">menu</li></a>
+      		<ul id="nav-mobile" class="right hide-on-med-and-down">
+                {% if user.is_authenticated %}
+        		    <li><a href="{% url 'User:profile' %}">{{user.username}}</a></li>
+        		    <li><a href="{% url 'User:logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'User:register' %}">Register</a></li>
+        		    <li><a href="{% url 'User:login' %}">Login</a></li>
+                {% endif %}
+      		</ul>
+
+            <ul class="sidenav" id="mobile-links">
+                {% if user.is_authenticated %}
+        		    <li><a href="{% url 'User:profile' %}">{{user.username}}</a></li>
+        		    <li><a href="{% url 'User:logout' %}">Logout</a></li>
+                {% else %}
+                    <li><a href="{% url 'User:register' %}">Register</a></li>
+        		    <li><a href="{% url 'User:login' %}">Login</a>
+                {% endif %}
+            </ul>
+</nav>
