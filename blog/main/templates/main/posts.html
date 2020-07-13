@@ -16,12 +16,12 @@ Blog
                     <p>{{ events.post_description }}</p>
                 </div>
                 <div class="card-action">
-                    <a href="#">View post</a>
+                    <a href="{{ events.get_absolute_url }}">View post</a>
                     <a href="#"></a>
                 </div>
             </div>
         </div>
-  </div>
+    </div>
     {% endfor %}
 </div>
 {% endblock body %}

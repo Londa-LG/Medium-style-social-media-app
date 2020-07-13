@@ -20,4 +20,5 @@ app_name= 'main'
 urlpatterns = [
     path('',views.homepage,name='homepage'),
     path('posts/',views.blog_posts,name='posts'),
+    path('posts/<int:id>/',views.post_view,name='post_view'),
 ]
