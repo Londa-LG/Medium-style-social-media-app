@@ -12,14 +12,13 @@ class Post_Form(forms.ModelForm):
             'post_title'
         ]
         widgets = {
-            'post': forms.Textarea(attrs={"class":"materialize-textarea"}),
-            'post_description': forms.TextInput(attrs={"type":"text"}),
-            'post_title': forms.TextInput(attrs={"type":"text"})
+            'post': forms.Textarea(attrs={"class":"materialize-textarea teal-text"}),
+            'post_description': forms.TextInput(attrs={"type":"text", "class":"teal-text"}),
+            'post_title': forms.TextInput(attrs={"type":"text","class":"teal-text"})
         }
 
 class User_Registration(UserCreationForm):
     email = forms.EmailField()
-
     class Meta:
         model = User
         fields = [

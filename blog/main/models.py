@@ -11,3 +11,10 @@ class Posts(models.Model):
 
     def get_absolute_url(self):
         return f"{self.id}/"
+
+class Quotes(models.Model):
+    name = models.CharField(max_length=50)
+    quote = models.TextField()
+
+    class Meta:
+        verbose_name_plural = "Quotes"

@@ -1,10 +1,11 @@
  <nav>
-            <div class="nav-wrapper" >
-                <a href="{% url 'main:homepage' %}" class="brand-logo">On My Mind</a>
+            <div class="nav-wrapper teal darken-2" >
+                <a href="{% url 'main:homepage' %}" class="brand-logo">OMM</a>
                  <a href="#" class="sidenav-trigger" data-target="mobile-links"><li class="material-icons">menu</li></a>
       		<ul id="nav-mobile" class="right hide-on-med-and-down">
                 {% if user.is_authenticated %}
-        		    <li><a href="{% url 'User:profile' %}">{{user.username}}</a></li>
+        		    <li>{{user.username}}</li>
+                    <li><a href="{% url 'User:post' %}">Write Post</a></li>
         		    <li><a href="{% url 'User:logout' %}">Logout</a></li>
                 {% else %}
                     <li><a href="{% url 'User:register' %}">Register</a></li>
@@ -14,8 +15,10 @@
 
             <ul class="sidenav" id="mobile-links">
                 {% if user.is_authenticated %}
-        		    <li><a href="{% url 'User:profile' %}">{{user.username}}</a></li>
+        		    <li>{{user.username}}</li>
+                    <li><a href="{% url 'User:post' %}">Write Post</a></li>
         		    <li><a href="{% url 'User:logout' %}">Logout</a></li>
+
                 {% else %}
                     <li><a href="{% url 'User:register' %}">Register</a></li>
         		    <li><a href="{% url 'User:login' %}">Login</a>

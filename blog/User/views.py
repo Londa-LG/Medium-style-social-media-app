@@ -16,7 +16,7 @@ def user_registration(request):
             username = form.cleaned_data.get('username')
             login(request,user)
             messages.success(request,f"{username} account created")
-            return redirect("/")
+            return redirect("/blog/posts/")
         else:
             for msg in form.error_messages:
                 messages.error(request,f"{msg}:{form.error_messages[msg]}")
@@ -34,7 +34,7 @@ def user_login(request):
             if user is not None:
                 login(request,user)
                 messages.info(request,'Login successful')
-                return redirect('/')
+                return redirect("/blog/posts/")
             else:
                 for msg in form.error_messages:
                     messages.error(request, f"{msg}:{form.error_messages[msg]}")

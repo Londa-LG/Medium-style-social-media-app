@@ -6,6 +6,14 @@
 
 {% block body %}
 <div class="container">
-    <h1>This is the post you clicked on</h1>
+    <div class="row">
+        {% for events in post %}
+            <h3>{{ events.post_title }}</h3>
+        {% endfor %}
+
+        {% for events in post %}
+            <p class="flow-text">{{ events.post }}</p>
+        {% endfor %}
+    </div>
 </div>
 {% endblock body %}
