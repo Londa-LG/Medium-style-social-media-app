@@ -15,10 +15,9 @@
 
             <ul class="sidenav" id="mobile-links">
                 {% if user.is_authenticated %}
-        		    <li>{{user.username}}</li>
+                <li><a href="#">{{ user.username }}</a></li>
                     <li><a href="{% url 'User:post' %}">Write Post</a></li>
         		    <li><a href="{% url 'User:logout' %}">Logout</a></li>
-
                 {% else %}
                     <li><a href="{% url 'User:register' %}">Register</a></li>
         		    <li><a href="{% url 'User:login' %}">Login</a>
